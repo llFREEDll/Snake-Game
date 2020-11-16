@@ -1,14 +1,8 @@
-/*.btn {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-  */
+#div{
+  display: flex;
+  align-items:center;
+  margin-left: 30%;
+}
   .btn {
     background-color:rgba(255, 72, 18, 0.6);
     border: none;
@@ -18,9 +12,44 @@
     font-size: 20px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    margin-left: 30%;
   }
-  
+
   .btn:hover {
     background-color:rgba(113, 255, 18, 0.6);
     color: whitesmoke;
   }
+  #btnUp {
+    padding: 30px;
+    background-color: #F9A0FF;
+    border: none;
+    margin-left: 50%;
+    margin-top: 50px;
+    margin-bottom: 4px;
+  }
+  #btnLeft{
+    padding: 30px;
+    background-color: #F9A0FF;
+    border: none;
+    margin-left: 43%;
+  }
+  #btncenter{
+    padding: 30px;
+    background-color: #F9A0FF;
+    border: none;
+  }
+  #btnRigh{
+    padding: 30px;
+    background-color: #F9A0FF;
+    border: none;
+  }
+.RLButtons{
+  display: flex;
+}
+#btnDown{
+  padding: 30px;
+  background-color: #F9A0FF;
+  border: none;
+  margin-left: 50%;
+  margin-top: 4px;
+}

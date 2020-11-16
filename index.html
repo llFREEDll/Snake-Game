@@ -5,10 +5,25 @@
     <link rel="stylesheet" href="Game01.css">
 </head>
 <body>
-    <div id="div">
+  <div id="div">
             <canvas id="canvas" width="400" height="400"></canvas>
-            <button content="text" class="btn" style="position: absolute; top:415px; left:610px;" onclick="restart()">RESTART</button>
-            <script src="Game01.js" ></script>
+
     </div>
+    <div >
+      <button content="text" class="btn" onclick="restart()">RESTART</button>
+    </div>
+    <div>
+      <button type="button" id="btnUp"  onclick="ChangeDirection('U')">/\</button>
+
+    </div>
+    <div class="RLButtons">
+      <button type="button" id="btnLeft" onclick="ChangeDirection('L')"><</button>
+      <button type="button" id="btncenter" ></button>
+      <button type="button" id="btnRigh" onclick="ChangeDirection('R')">></button>
+    </div>
+    <div >
+      <button type="button" id="btnDown" onclick="ChangeDirection('D')">\/</button>
+    </div>
+    <script src="Game01.js" ></script>
 </body>
 </html>

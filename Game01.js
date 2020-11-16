@@ -28,15 +28,15 @@ let food={
     y:Math.floor((Math.random()*13)+2)*dx
 }
 
-var direction=function(event){
-    if(event.keyCode==37&&dir!="R"&&move){
+var direction = function(event){
+    if(event.keyCode == 37 && dir != "R" && move){
         dir="L";
         move=false;
     }
     else if(event.keyCode==38&&dir!="D"&&move){
         dir="U";
         move=false;
-    }   
+    }
     else if(event.keyCode==39&&dir!="L"&&move){
         dir="R";
         move=false;
@@ -45,10 +45,29 @@ var direction=function(event){
         dir="D";
         move=false;
     }
-        
+
 }
 
+const ChangeDirection = (btnDir) =>{
 
+  if(btnDir == 'L' && dir != "R" && move){
+      dir="L";
+      move=false;
+  }
+  else if(btnDir == 'U'&&dir!="D"&&move){
+      dir="U";
+      move=false;
+  }
+  else if(btnDir == 'R' &&dir!="L"&&move){
+      dir="R";
+      move=false;
+  }
+  else if(btnDir == 'D'&&dir!="U"&&move){
+      dir="D";
+      move=false;
+  }
+
+}
  var collision=function(head,array){
     for(let i=0;i<array.length;i++)
     if(head.x==array[i].x&&head.y==array[i].y){
@@ -67,9 +86,9 @@ var draw=function(){
         if(dir=="L") snakeX-= dx;
         if(dir=="U") snakeY-= dx;
         if(dir=="D") snakeY+= dx;
-        if(dir=="R") snakeX+= dx;    
+        if(dir=="R") snakeX+= dx;
 
-   
+
 
     for(let i=0;i<snake.length;i++){
         i==0?context.drawImage(sHead,snake[i].x,snake[i].y):context.drawImage(sBody,snake[i].x,snake[i].y);
@@ -86,7 +105,7 @@ var draw=function(){
 
         if(snakeX==food.x&&snakeY==food.y){
             if(score<182){
-                score++; 
+                score++;
             for(let i=0;i<snake.length;i++){
                 if(snake[i].x==food.x&&snake[i].y==food.y)
                 food={
@@ -97,7 +116,7 @@ var draw=function(){
             else{
                 alert("CONGRATULATION!!! \n YOU WIN!");
             }
-            
+
         }else snake.pop();
 
         context.fillStyle="white";
@@ -108,8 +127,8 @@ var draw=function(){
             y:snakeY
         }
 
-        
-        
+
+
         if(snakeX<=0||snakeX>=375||snakeY<=25||snakeY>=375||collision(newHead,snake)){
             clearInterval(loop);
             context.drawImage(bg,0,0);
@@ -120,7 +139,7 @@ var draw=function(){
             for(let i=0;i<snake.length;i++)
                     i==0?context.drawImage(sHead,snake[i].x,snake[i].y):context.drawImage(sBody,snake[i].x,snake[i].y);
             snake.unshift(newHead);
-            if(snakeX>=375)            
+            if(snakeX>=375)
             for(let i=0;i<snake.length;i++)
                 i==0?context.drawImage(sHead,snake[i].x-dx,snake[i].y):context.drawImage(sBody,snake[i].x-dx,snake[i].y);
             else if(snakeX<=25)
@@ -131,10 +150,10 @@ var draw=function(){
                 i==0?context.drawImage(sHead,snake[i].x,snake[i].y-dx):context.drawImage(sBody,snake[i].x,snake[i].y-dx);
             else if(snakeY<=25)
                 for(let i=0;i<snake.length;i++)
-                    i==0?context.drawImage(sHead,snake[i].x,snake[i].y+dx):context.drawImage(sBody,snake[i].x,snake[i].y+dx);        
+                    i==0?context.drawImage(sHead,snake[i].x,snake[i].y+dx):context.drawImage(sBody,snake[i].x,snake[i].y+dx);
         }
         snake.unshift(newHead);
-            
+
         }
 var restart=function(){
      snake.length=0;
