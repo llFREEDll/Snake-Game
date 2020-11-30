@@ -48,26 +48,6 @@ var direction = function(event){
 
 }
 
-const ChangeDirection = (btnDir) =>{
-
-  if(btnDir == 'L' && dir != "R" && move){
-      dir="L";
-      move=false;
-  }
-  else if(btnDir == 'U'&&dir!="D"&&move){
-      dir="U";
-      move=false;
-  }
-  else if(btnDir == 'R' &&dir!="L"&&move){
-      dir="R";
-      move=false;
-  }
-  else if(btnDir == 'D'&&dir!="U"&&move){
-      dir="D";
-      move=false;
-  }
-
-}
  var collision=function(head,array){
     for(let i=0;i<array.length;i++)
     if(head.x==array[i].x&&head.y==array[i].y){
